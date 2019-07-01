@@ -27,7 +27,8 @@ foo = long_function_name(
     var_three, var_four)
 
 
-# The closing brace/bracket/parenthesis on multiline constructs  may be lined up under the first character of the line that starts the multiline construct, as in:
+# The closing brace/bracket/parenthesis on multiline constructs  may be lined up under 
+# the first character of the line that starts the multiline construct, as in:
 
 my_list = [
     1, 2, 3,
