@@ -1,11 +1,13 @@
 # Coding Standars 
 * Python: PEP 8 => https://www.python.org/dev/peps/pep-0008/
-*
+
 
 ### Consistent Indentation
 
 **Tabs or Spaces?**
+
 Spaces are the preferred indentation method.
+Use 4 spaces for each level.
 Tabs should be used solely to remain consistent with code that is already indented with tabs.
 
 ```
@@ -49,6 +51,7 @@ income = (gross_wages
 ### Limit Line Length
 
 **Maximum Line Length**
+
 Limit all lines to a maximum of 79 characters.
 
 ```
@@ -78,11 +81,7 @@ Note: When using acronyms in CapWords, capitalize all the letters of the acronym
 
 * mixedCase (First letter of each word is capitalized, except the first word.) 
 
-**Names to Avoid** 
-
-Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. In some fonts, these characters are indistinguishable from the numerals one and zero. When tempted to use 'l', use 'L' instead.
-
-
+#### Naming Conventions:
 - **Package and Module Names** should have short, ***all-lowercase names***. Underscores can be used in the module name if it improves readability. The use of underscores is discouraged.
 
 
@@ -92,16 +91,22 @@ Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), o
 
 - **Constants** are usually defined on a module level and written in ***UPPER_CASE_WITH_UNDERSCORES***. Examples include MAX_OVERFLOW and TOTAL.
 
+**Names to Avoid** 
+
+Never use the characters 'l' (lowercase letter el), 'O' (uppercase letter oh), or 'I' (uppercase letter eye) as single character variable names. In some fonts, these characters are indistinguishable from the numerals one and zero. When tempted to use 'l', use 'L' instead.
+
 
 ### Imports
-* Imports should usually be on separate lines:
+Imports should usually be on separate lines:
+
 ```
 import os
 import sys
 
 from subprocess import Popen, PIPE
 ```
-* Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.
+
+Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants.
 
 Imports should be grouped in the following order:
 
@@ -114,7 +119,7 @@ You should put a blank line between each group of imports.
 
 ### Comments
 
-* Comments should be **complete sentences**. The first word should be capitalized, unless it is an identifier that begins with a lower case letter (never alter the case of identifiers!).
+Comments should be **complete sentences**. The first word should be capitalized, unless it is an identifier that begins with a lower case letter (never alter the case of identifiers!).
 
 **Block Comments**
 
@@ -126,13 +131,13 @@ Paragraphs inside a block comment are separated by a line containing a single #.
 
 An inline comment is a comment on the same line as a statement. Inline comments should be separated by at least two spaces from the statement. They should start with a # and a single space.
 
-*Inline comments are unnecessary and in fact distracting if they state the obvious.*
+Inline comments are unnecessary and in fact distracting if they state the obvious.
 
 **Documentation Strings**
 
-For conventions for writing good documentation strings (a.k.a. "docstrings") see PEP 257.
+*For conventions for writing good documentation strings (a.k.a. "docstrings") see PEP 257.*
 
-* Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
+Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
 
 ```
     """Return a foobang
