@@ -190,6 +190,7 @@ sass --watch carpetaDeOrigen : carpetaDeDestino
 1. TERMINAL> django-admin startproject nombreProyecto
 2. POSTGRESQL> Crear Base de Datos >> ej> Proyecto_db
 3. SETTINGS.PY>
+```
 	DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -200,50 +201,59 @@ sass --watch carpetaDeOrigen : carpetaDeDestino
 			'PORT': '5432',
  		}
 	}
-
+```
 4. TERMINAL> python3 manage.py startapp NombreApp
 5. SETTINGS.PY>
+```
 	INSTALLED_APPS = {
 		...
 		...
 		'NombreApp',
 	} 
+```
 6. MODELS.PY> Crear modelos. Por ej.
+```
 	class NombreModelo(models.Modelo):
 		nombre = models.CharField(max_length=30)
 		...
 		...
 		def __str__(self):
 			return self.nombre
+```
 7. TERMINAL> python3 manage.py makemigrations
 8. TERMINAL> python3 manage.py migrate
 9. TERMINAL> python3 manage.py createsuperuser
-	ingresar nombre de usuario (ej. admin)
-	ingresar password (ej. admin1234)
+* ingresar nombre de usuario (ej. admin)
+* ingresar password (ej. admin1234)
 10. ADMIN.PY> agregar:
+```
 	from NombreApp.models import NombreModelo
+
 	admin.site.register(NombreModelo)
+```
 11. TERMINAL> python3 manage.py runserver (se sale con Ctrl+C)
 12. NAVEGADOR> localhost:8000/admin
 
 #### VISTAS
 13. dentro de la carpeta de la app, abrir views.py
 ejemplo de views simple:
-
+```
 from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello, world.")
-
+```
 #### URLS
 14. dentro de la carpeta de la app, crear un archivo urls.py y añadir el siguiente codigo para vincular views con urls
+```
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
 ]
-
+```
 15. en el arhivo urls.py del proyecto, vincular URLs de aplicaciones con URL general del proyecto
+```
 from django.contrib import admin
 from django.urls import include, path
 
@@ -251,7 +261,7 @@ urlpatterns = [
     path('nombreApp/', include('nombreApp.urls')),
     path('admin/', admin.site.urls),
 ]
-
+```
 para corroborar que funciona ir al navegador y colocar http://localhost:8000/nombreApp/ y se debería ver el texto «Hello, world.» que escribimos en views.py, en el views "index"
 
 ***
@@ -280,7 +290,9 @@ http://django-import-export.readthedocs.io/en/latest/getting_started.html
 
 
 ***
+
 # REACT.JS
+https://devhints.io/react
 ## Instalar Node.JS, npm & npx
 ```
 sudo apt-get install nodejs
@@ -296,11 +308,11 @@ npx create-react-app nombreProyecto
 Esto crea una carpeta con todo el proyecto, en donde se encuentra `package.json` que incluye todas las dependencies / requirements.
 
 ## Comandos (correr en el directorio donde se encuentra `package.json`):
-* *Development* build/watch: Abre navegador con el pryecto
+* **Development** build/watch: Abre navegador con el pryecto
 ```
 npm run start
 ```
-* *Production* build
+* **Production** build
 ```
 npm run build
 ```
